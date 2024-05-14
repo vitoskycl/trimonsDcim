@@ -21,7 +21,7 @@ const routes: Routes = [
     path: 'gabinete',
     component: LayoutDcimComponent,
     children:[
-      {path:'list', component:GabineteListPageComponent},
+      {path:'', component:GabineteListPageComponent},
       {path:'', redirectTo:'list', pathMatch:'full'}
     ]
   },
