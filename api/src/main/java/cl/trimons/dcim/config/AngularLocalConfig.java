@@ -17,7 +17,7 @@ public class AngularLocalConfig {
         return new WebMvcConfigurer() {
 
             @Override
-            public void addCorsMappings(final CorsRegistry registry) {
+            public void addCorsMappings(@SuppressWarnings("null") final CorsRegistry registry) {
                 registry.addMapping("/**").allowedMethods("*").allowedOrigins(angularAllowOrigin);
             }
 
