@@ -1,0 +1,37 @@
+<h2 mat-dialog-title> Datacenter Form</h2>
+<mat-dialog-content>
+  <mat-card>
+    <mat-card-content>
+      <form class="grid" [formGroup]="datacenterForm" (ngSubmit)="onSumit()">
+        <mat-form-field class="col-12">
+          <mat-label>Nombre</mat-label>
+          <input
+            type="text"
+            matInput placeholder="Nombre"
+            required
+            formControlName="nombre"
+            >
+        </mat-form-field>
+        <mat-form-field class="col-12">
+          <mat-label>Dirección</mat-label>
+          <input
+            type="text"
+            matInput placeholder="Dirección"
+            required
+            formControlName="direccion"
+            >
+        </mat-form-field>
+        <section class="col-12" [formGroup]="datacenterForm">
+          <mat-checkbox formControlName="vigente">Vigente?</mat-checkbox>
+        </section>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button cdkFocusInitial mat-button mat-flat-button color="primary" (click)="onSumit()">
+    <mat-icon>save</mat-icon>
+    {{data ? "Editar" : "Crear"}}
+  </button>
+</mat-dialog-actions>

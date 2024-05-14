@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{data.titulo}}</h2>
+<mat-dialog-content>
+  <p>Está seguro que desea eliminar, {{data.mensaje}} con Id {{data.id}} ?</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No</button>
+  <button mat-button [mat-dialog-close]="data.id" cdkFocusInitial>Si</button>
+</mat-dialog-actions>

@@ -1,0 +1,46 @@
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="push" [ngStyle]="{ width: '250px' }">
+    <mat-toolbar>
+      <span>Menú</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+    </mat-toolbar>
+  </mat-sidenav>
+
+    <mat-toolbar color="primary">
+    <!-- <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button> -->
+    <button mat-button [matMenuTriggerFor]="opciones"><mat-icon>menu</mat-icon></button>
+    <span>Trimons DCIM</span>
+    <span class="spacer"></span>
+
+    <button mat-button>
+      <mat-icon>exit_to_app</mat-icon>
+      Logout
+    </button>
+
+  </mat-toolbar>
+
+  <mat-menu #opciones="matMenu">
+    <button mat-menu-item routerLink="/dcim/datacenter">Datacenters</button>
+    <button mat-menu-item routerLink="/dcim/gabiniete">Gabinetes</button>
+    <button mat-menu-item routerLink="/dcim/categoria">Categorias</button>
+    <button mat-menu-item routerLink="/dcim/caracteristica">Características</button>
+    <button mat-menu-item routerLink="/dcim/elemento">Elementos</button>
+   </mat-menu>
+
+  <div class="container p-2">
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+</mat-sidenav-container>
+
+
+

@@ -1,0 +1,49 @@
+<h1>Listado de Datacenters</h1>
+<table mat-table [dataSource]="datacenters" class="mat-elevation-z8">
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let element">
+      <button
+        mat-icon-button
+        color="primary"
+        (click)="editDatacenter(element.datacenterId)"
+        matTooltip="Clic para Editar"
+        matTooltipPosition="right"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="warn"
+        (click)="deleteDatacenter(element.datacenterId)"
+        matTooltip="Clic para Borrar"
+        matTooltipPosition="right"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="datacenterId">
+    <th mat-header-cell *matHeaderCellDef> Id. </th>
+    <td mat-cell *matCellDef="let element"> {{element.datacenterId}} </td>
+  </ng-container>
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+  <ng-container matColumnDef="direccion">
+    <th mat-header-cell *matHeaderCellDef> Dirección </th>
+    <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+  </ng-container>
+  <ng-container matColumnDef="vigente">
+    <th mat-header-cell *matHeaderCellDef> Vigente </th>
+    <td mat-cell *matCellDef="let element"> {{element.vigente}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-divider class="mb-2"></mat-divider>
+<button mat-button mat-flat-button color="accent" (click)="newDatacenter()">
+  <mat-icon>add</mat-icon>
+  Nuevo Registro
+</button>

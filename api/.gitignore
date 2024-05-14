@@ -1,0 +1,40 @@
+HELP.md
+target/
+/.mvn/*
+application-local.properties
+*.log
+
+/target
+
+## IntelliJ IDEA
+.idea
+*.iws
+*.iml
+*.ipr
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+## STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+## NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
