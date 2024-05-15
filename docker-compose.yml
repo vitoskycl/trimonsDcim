@@ -4,7 +4,7 @@ services:
             - 3306:3306
         container_name: dcim-db
         volumes:
-            - mysql8:/var/lib/mysql
+            - dcimdbvol:/var/lib/mysql
         environment:
             - MYSQL_ROOT_PASSWORD=1mXpPYvMvuUGKk7
         image: mysql:8.0.36
@@ -17,7 +17,7 @@ services:
         container_name: dcim-bck
         environment:
             - spring_profiles_active=docker
-            - JDBC_DATABASE_URL=jdbc:mysql://db:3306/trimons_dcim
+            - JDBC_DATABASE_URL=jdbc:mysql://db:3306/trimons_dcim?createDatabaseIfNotExist=true
             - JDBC_DATABASE_USERNAME=root
             - JDBC_DATABASE_PASSWORD=1mXpPYvMvuUGKk7
         build: ./api
@@ -37,5 +37,4 @@ services:
             - 80:80
         restart: always           
 volumes:
-  mysql8:
-    external: true
+  dcimdbvol:
